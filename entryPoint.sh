@@ -108,8 +108,8 @@ if [[ "${NODE,,}" == "receiver" ]]; then
     chmod 700 /root
     chmod 700 /root/.ssh
     chmod 600 /root/.ssh/authorized_keys
-    chmod a+x /etc/periodic/15min/manualdnssync
-    chmod a+x /etc/periodic/15min/manualpiholesync
+    chmod +x /etc/periodic/15min/manualdnssync
+    chmod +x /etc/periodic/15min/manualpiholesync
     crond &
     /usr/sbin/sshd -D -e
 fi
