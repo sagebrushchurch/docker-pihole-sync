@@ -8,6 +8,8 @@ ADD sync-pihole.sh /sync-pihole.sh
 ADD entryPoint.sh /entryPoint.sh
 ADD sshd_config /
 ADD healthCheck.sh /healthCheck.sh
+ADD manualdnssync /etc/perodic/15min/manualdnssync
+ADD manualpiholesync /etc/perodic/15min/manualpiholesync
 
 ENTRYPOINT ["dumb-init", "/entryPoint.sh"]
 
