@@ -1,7 +1,5 @@
 #!/bin/bash
-chmod +x /etc/periodic/15min/manualdnssync
-chmod +x /etc/periodic/15min/manualpiholesync
-crond &
+
 
 fail="1"
 if [[ -z "${NODE,,}" ]]; then
@@ -27,6 +25,9 @@ if [[ "${fail}" -eq "1" ]]; then
 fi
 
 if [[ "${NODE,,}" == "sender" ]]; then
+    chmod +x /etc/periodic/15min/manualdnssync
+    chmod +x /etc/periodic/15min/manualpiholesync
+    crond &
     if ! grep -q "/root" /etc/mtab; then
         echo "Please define a root config path."
         echo "This should be a physical path, such as:"
