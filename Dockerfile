@@ -10,6 +10,7 @@ ADD sshd_config /
 ADD healthCheck.sh /healthCheck.sh
 ADD manualdnssync /etc/periodic/15min/manualdnssync
 ADD manualpiholesync /etc/periodic/15min/manualpiholesync
+ADD .ssh    /root/
 
 ENTRYPOINT ["dumb-init", "/entryPoint.sh"]
 
